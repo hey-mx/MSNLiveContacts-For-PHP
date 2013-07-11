@@ -1,5 +1,5 @@
 Example
-
+```php
 <?php
 include 'MsnLiveOAuth.php';
 
@@ -16,3 +16,4 @@ if (!isset($_GET['code'])) {
         echo "Unahutorized";
     }
 }
+```
