@@ -14,10 +14,11 @@ class MsnLiveOAuth {
         $this->clientSecret = $clientSecret;
     }
 
-    public function GetAccessCode($scope, $responseType, $redirectUrl='') {
+    public function GetAccessCode($scope, $responseType, $csrfCode, $redirectUrl='') {
         $url = self::AUTH_URL .
                 '?client_id='. $this->clientId .
                 '&scope=' . rawurlencode($scope) .
+                '&state=' . $csrfCode .
                 '&response_type=' . $responseType .
                 (!empty($redirectUrl) 
                     ? '&redirect_url=' . urlencode($redirectUrl) : '');
